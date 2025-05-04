@@ -1,6 +1,6 @@
 // backend/config/firebase-admin.js
 const admin = require('firebase-admin');
-const serviceAccount = require('/workspaces/LumenLMS/backend/config/lumen-a9ef2-firebase-adminsdk-fbsvc-f77fd4727b.json'); // Add your Firebase admin SDK file here
+const serviceAccount = JSON.parse(process.env.FIREBASE_ADMIN_SDK); // Add your Firebase admin SDK file here
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
